@@ -201,8 +201,8 @@ while (numero > 0 && numero <= 5)
     Console.WriteLine(numero);
     numero--;
 }
-
 */
+
 
 // d) Simular un login: pedir usuario hasta que ingrese "admin" con do-while.
 // AGREGAR UNA VARIABLE DE REINTENTOS, PROPONGAN UN NUMERO DE REINTENTOS Y AL FINAL DE LA EJECUCIÓN MUESTREN SI EL USUARIO PUDO
@@ -215,20 +215,34 @@ int reintentos = 5;
 do{
     Console.WriteLine("Ingrese el usuario: ");
     usuario = Console.ReadLine();
-    Console.WriteLine("Usuario incorrecto, ingrese de nuevo");
-    Console.WriteLine($"Usuario incorrecto, le quedan {reintentos} intentos");
-    reintentos--;
+    if (usuario == "admin")
+    {
+        Console.WriteLine("Logró ingresar como admin");
+    }
+    else
+        if (reintentos >0)
+        {
+            Console.WriteLine($"Usuario incorrecto, ingrese de nuevo. Le quedan {reintentos} intentos");
+            reintentos--;
+        }else if (reintentos == 0)
+        {
+            Console.WriteLine("No le quedan más intentos");
+        reintentos--;
+        }
+    //{
+        //Console.WriteLine($"Usuario incorrecto, ingrese de nuevo. Le quedan {reintentos} intentos");
+        //reintentos--;
+    //}
+        
     
 } while (usuario != "admin" && reintentos >= 0);
 
- 
+ /*
 if (reintentos == -1)
 {
     Console.WriteLine("No te quedan más intentos");
-} else
-{
-    Console.WriteLine("logró ingresar como andmin");
-}
+} 
+ */
 
 
 
