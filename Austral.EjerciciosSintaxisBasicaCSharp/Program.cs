@@ -118,8 +118,9 @@ else
 double precioCompleto = 100;
 double precioMayorista = precioCompleto - (precioCompleto * 0.20);
 double precioClienteFinal = precioCompleto - (precioCompleto * 0.80);
-string cliente = "minorista";
+string cliente = "mayorista";
 
+/*
 if (cliente == "minorista")
 {
     Console.WriteLine($"El precio a cobrar es de {precioCompleto} ");
@@ -132,14 +133,16 @@ else if (cliente == "cliente final")
 {
     Console.WriteLine($"El precio a cobrar es de {precioClienteFinal}");
 }
+*/
 
+/*
     switch (cliente)
     {
         case "minorista":
             Console.WriteLine($"El precio a cobrar es de {precioCompleto}");
             break;
         case "mayorista":
-            Console.WriteLine($"El precio a cobrar es de {precioMayorista}, se le aplico un 20% de descuento");
+            Console.WriteLine($"El precio a cobrar es de {precioMayorista}, se le aplica un 20% de descuento");
             break;
         case "cliente final":
             Console.WriteLine($"El precio a cobrar es de {precioClienteFinal}, se le aplica un 80% de descuento");
@@ -148,7 +151,7 @@ else if (cliente == "cliente final")
             Console.WriteLine("Usuario no encontrado");
             break;
     }
-
+*/
 
 // d) Una distribuidora tiene 20 unidades de cerveza en stock. Un cliente solicita 25 unidades.
 //    Verificar si hay suficiente stock para concretar la venta:
@@ -157,19 +160,77 @@ else if (cliente == "cliente final")
 //       (donde X debe calcularse dinámicamente en base a las variables)
 
 
+
 // ==========
 // 4. Bucles
 // ==========
 
 // a) Mostrar los primeros 10 números naturales usando un for.
 
+/*
+for (int i = 1; i <= 10; i++)
+{
+    Console.WriteLine(i);
+}
+*/
+
 // b) Dado este array que representa las ventas de una empresa:
 //    int[] ventasMensuales = { 1000, 1200, 950, 1100 };
 //    Sumar las ventas mensuales con un foreach y mostrar el total por consola.
 
+/*
+int[] ventasMensuales = { 1000, 1200, 950, 1100 };
+int sumaVentas = 0;
+
+foreach (var venta in ventasMensuales)
+{
+    sumaVentas = sumaVentas + venta; 
+}
+Console.WriteLine($"La suma es de {sumaVentas}");
+*/
+
 // c) Hacer una cuenta regresiva del 5 al 1 con while.
 
+// ARREGLAR 
+
+/*
+int numero = 5;
+
+while (numero > 0 && numero <= 5)
+{
+    Console.WriteLine(numero);
+    numero--;
+}
+
+*/
+
 // d) Simular un login: pedir usuario hasta que ingrese "admin" con do-while.
+// AGREGAR UNA VARIABLE DE REINTENTOS, PROPONGAN UN NUMERO DE REINTENTOS Y AL FINAL DE LA EJECUCIÓN MUESTREN SI EL USUARIO PUDO
+// ACCEDER AL PANEL O SI TODOS LOS INTENTOS FUERON FALLIDOS
+
+
+string? usuario;
+int reintentos = 5;
+
+do{
+    Console.WriteLine("Ingrese el usuario: ");
+    usuario = Console.ReadLine();
+    Console.WriteLine("Usuario incorrecto, ingrese de nuevo");
+    Console.WriteLine($"Usuario incorrecto, le quedan {reintentos} intentos");
+    reintentos--;
+    
+} while (usuario != "admin" && reintentos >= 0);
+
+ 
+if (reintentos == -1)
+{
+    Console.WriteLine("No te quedan más intentos");
+} else
+{
+    Console.WriteLine("logró ingresar como andmin");
+}
+
+
 
 
 // =============
